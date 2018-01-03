@@ -16,9 +16,17 @@ namespace Valoraciones
             valoraciones = new List<float>();
         }
 
-        public void PublicarValoraciones()
+        public CalcularValoraciones PublicarValoraciones()
         {
             CalcularValoraciones calculo = new CalcularValoraciones();
+            float sumaValoraciones = 0;
+            foreach(float valoracion in valoraciones)
+            {
+                sumaValoraciones += valoracion;
+            }
+
+            calculo.promedioValoraciones = sumaValoraciones / valoraciones.Count;
+            return calculo;
         }
 
         public void AgregarValoracion(float valoracion)

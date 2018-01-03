@@ -13,7 +13,9 @@ namespace Valoraciones
 
         }
 
-
+        public float valoracionMin;
+        public float valoracionMax;
+        public float promedioValoraciones;
 
     }
 }
