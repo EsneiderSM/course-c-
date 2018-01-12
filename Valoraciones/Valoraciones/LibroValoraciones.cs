@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace Valoraciones
 {
-    class LibroValoraciones
+    public class LibroValoraciones
     {
+        public string Nombre;
+        public IdiomaLibro Idioma;
 
         List<float> valoraciones;
 
@@ -22,10 +24,12 @@ namespace Valoraciones
             float sumaValoraciones = 0;
             foreach(float valoracion in valoraciones)
             {
+                calculo.ValoracionMin = Math.Min(valoracion, calculo.ValoracionMin);
+                calculo.ValoracionMax = Math.Max(valoracion, calculo.ValoracionMax);
                 sumaValoraciones += valoracion;
             }
 
-            calculo.promedioValoraciones = sumaValoraciones / valoraciones.Count;
+            calculo.PromedioValoraciones = sumaValoraciones / valoraciones.Count;
             return calculo;
         }
 
@@ -33,7 +37,6 @@ namespace Valoraciones
         {
             valoraciones.Add(valoracion);
         }
-
 
     }
 }

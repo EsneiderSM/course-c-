@@ -6,16 +6,17 @@ using System.Threading.Tasks;
 
 namespace Valoraciones
 {
-    class CalcularValoraciones
+    public class CalcularValoraciones
     {
+
+        public float ValoracionMin;
+        public float ValoracionMax;
+        public float PromedioValoraciones;
+
         public CalcularValoraciones()
         {
-
+            ValoracionMin = float.MaxValue;
         }
-
-        public float valoracionMin;
-        public float valoracionMax;
-        public float promedioValoraciones;
 
     }
 }
